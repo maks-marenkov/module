@@ -1,5 +1,5 @@
 Запуск playbook:
-    ansible-playbook playbook.yml
+    ansible-playbook -i hosts playbook.yml
 
 Software Installation
 1. We can install the community-general collections package via ansible-galaxy using the below code:

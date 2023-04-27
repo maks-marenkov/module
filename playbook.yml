@@ -1,7 +1,5 @@
 ---
-- name: Create new LXC container in Proxmox Cygnus Host
-
-hosts: 'cygnus.prod.lan'
+hosts: 'client01'
 tasks:
 - name: 'Create Container'
 proxmox:

@@ -1,0 +1,21 @@
+1. apt install git python3-pip
+2. update-alternatives --version /usr/bin/python python /usr/bin/python3 2
+3. pip3 install ansible
+4. pwd 
+5. vi ansible.cfg
+    [defaults]
+    inventory = /root/ansible/hosts
+    host_key_checking = false
+6. mkdir ansible > touch hosts
+7. vi hosts
+    client01 ansible_host=192.168.1.1 ansible_user= ansible_password= ansible_ssh_private_key_file=/root/.ssh/ssh_rsa #Адрес устройства
+8. ssh-keygen
+cat id_rsa.pub
+ansible all -m ping
+
+
+
+
+client01
+    cd .ssh/
+    vi authorized_keys

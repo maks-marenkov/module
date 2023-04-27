@@ -1,0 +1,25 @@
+---
+- name: Create new LXC container in Proxmox Cygnus Host
+
+hosts: 'cygnus.prod.lan'
+tasks:
+- name: 'Create Container'
+proxmox:
+vmid: '300' # Specifying Container ID
+api_user: 'root@pam' # Proxmox user
+api_password: apiPassword # Password in plaintext !!!
+api_host: 'cygnus.prod.lan' # Proxmox hostname
+password: containerPassword # Password in plaintext !!!
+hostname: 'test.prod.lab' # Container hostname
+node: 'cygnus' # Name of Proxmox host
+cores: '1'
+cpus: '2'
+cpuunits: '1000'
+ostemplate: 'ISOimages_Alpha:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz' # Or use local:vztmpl/... as discussed
+storage: 'mxzfs' # Or use 'local' as discussed
+disk: '16'
+memory: '512'
+nameserver: '10.100.0.1'
+netif: '{"net0":"name=eth0,ip=dhcp,ip6=dhcp,bridge=vmbr0,tag=50"}'
+searchdomain: 'prod.lab'
+state: 'present'

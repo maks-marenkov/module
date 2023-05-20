@@ -1,3 +1,3 @@
 # module
 help-rep
-# Рапозитория с конфигами и подсказсками для ССА
+# Repository SSA

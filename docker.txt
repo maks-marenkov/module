@@ -22,5 +22,11 @@ mv name.txt hello/
 nano hello/Dockerfile
 
 ** Билд и запуск docker
-docker build -t HelloFIRPO -f Dockerfile .
+nano /etc/docker/daemon.json
+    {"insecure-registries":["10.1.33.30:5000"]}
+
+
+docker build -t HelloFIRPO:v1 -f Dockerfile .
 docker run HelloFIRPO
+docker tag HelloFIRPO 10.1.33.30:5000/app
+docker push 10.1.33.30:5000/app

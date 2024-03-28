@@ -1,4 +1,4 @@
+FROM alpine
 WORKDIR /usr/app/
 COPY name.txt /usr/app
-RUN echo experts > name.txt
-CMD echo "Hello, FIRPO! Greetings from $(<name.txt)"
+CMD echo Hello, FIRPO! Greetings from ; cat name.txt

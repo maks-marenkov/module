@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mediawiki:
+  wiki:
     image: mediawiki
     restart: always
     ports:
@@ -9,7 +9,7 @@ services:
       - database
     volumes:
       - ./images:/var/www/html/images
-  database:
+  db:
     image: mysql
     restart: always
     volumes:

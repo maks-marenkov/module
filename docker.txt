@@ -30,3 +30,8 @@ docker build -t HelloFIRPO:v1 -f Dockerfile .
 docker run HelloFIRPO
 docker tag HelloFIRPO 10.1.33.30:5000/app
 docker push 10.1.33.30:5000/app
+
+
+В пользователе ubuntu создать файл wiki.yml и docker-compose.yml и вставить данные из wiki.txt
+docker-compose build
+docker-compose up

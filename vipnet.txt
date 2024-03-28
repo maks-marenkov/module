@@ -6,3 +6,13 @@ inet bonding add 0 mode balance-rr slaves eth1 eth2
 iplir adapter add bond0 traffic on
 inet ifconfig bond 0 address x.x.x.x netmask x.x.x.x
 Inet ifconfig bond0 up
+
+
+inet dhcp server add interface eth1
+inet dhcp server add range 192.168.110.3 192.168.110.6 interface eth1
+inet dhcp server add router 192.168.110.2 interface eth1
+inet dhcp server mode on
+inet dhcp server start
+
+
+firewall local add 1 rule "web" src 192.168.110.5 dst 192.168.110.2 tcp dport 8080

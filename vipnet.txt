@@ -1,0 +1,8 @@
+inet ifconfig eth1 class slave
+inet ifconfig eth1 up
+inet ifconfig eth2 class slave
+inet ifconfig eth2 up
+inet bonding add 0 mode balance-rr slaves eth1 eth2
+iplir adapter add bond0 traffic on
+inet ifconfig bond 0 address x.x.x.x netmask x.x.x.x
+Inet ifconfig bond0 up

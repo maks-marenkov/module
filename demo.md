@@ -2,13 +2,10 @@
   <summary>Модуль 1</summary>
 
 Присвоение имён:
-## HQ-R
 ```
 hostnamectl set-hostname hq-r.hq.work;exec bash
 ```
 
-
-## HQ-SRV
 Смотрим название адаптера:
 ```
 ip a

@@ -46,3 +46,34 @@ service network restart
 ***
 
 </details>
+```
+version: '3'
+services:
+  mediawiki:
+    image: mediawiki
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - database
+    container_name: wiki
+    volumes:
+      - images:/var/www/html/images
+# Сначала устанавливаем вручную до конца, потом убираем комментарий
+#      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+  database:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: mediawiki
+      MYSQL_USER: wiki
+      MYSQL_PASSWORD: DEP@ssw0rd
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      TZ: Asia/Yekaterinburg
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  images:
+  db:
+  ```

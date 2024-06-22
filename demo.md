@@ -35,8 +35,14 @@ CONFIG_IPV6=yes
 DNS-сервер:
 ```
 echo nameserver 8.8.8.8 > /etc/resolv.conf
-```
 
+
+
+```
+Iperf замер HQ-R:
+```
+iperf3 -c 192.168.0.161 -f M
+```
 Перезагрузка адаптера:
 ```
 service network restart

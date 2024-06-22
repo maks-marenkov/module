@@ -1,6 +1,9 @@
 <details>
   <summary>Модуль 1</summary>
-
+10.10.1.37
+  1
+  ADM
+  
 Присвоение имён:
 ```
 hostnamectl set-hostname hq-r.hq.work;exec bash
